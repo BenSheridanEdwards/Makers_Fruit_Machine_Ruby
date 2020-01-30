@@ -31,10 +31,17 @@ describe FruitMachine do
       machine.pull_lever
       expect(machine.player_wins?).to be true
     end
+
+    it 'returns true if a all four slots are different colours' do
+      machine.insert(1)
+      expect(Slots).to receive(:random).and_return(["Black", "White", "Green", "Yellow"])
+      machine.pull_lever
+      expect(machine.player_wins?).to be true
+    end
   end
 
   describe '#payout' do
-    it 'pays out the jackpot when the player wins' do
+    it 'pays out the jackpot when the display is four of the same colour' do
       machine.insert(1)
       expect(Slots).to receive(:random).and_return(["Black", "Black", "Black", "Black"])
       machine.pull_lever

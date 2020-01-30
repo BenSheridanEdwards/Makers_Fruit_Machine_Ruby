@@ -23,7 +23,11 @@ class FruitMachine
   end
 
   def player_wins? 
-    true if game_jackpot?
+    if game_jackpot?
+      true
+    elsif game_half_jackpot?
+      true
+    end
   end
 
   def payout
@@ -34,5 +38,9 @@ class FruitMachine
 
   def game_jackpot?
     @outcome.uniq.size == 1
+  end
+
+  def game_half_jackpot?
+    @outcome.uniq.size == 4
   end
 end
