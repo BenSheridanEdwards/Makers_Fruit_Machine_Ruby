@@ -36,7 +36,7 @@ class FruitMachine
   def payout
     return @money if game_jackpot?
     return @money / 2 if game_half_jackpot?
-
+    return 5 if game_adjacent_colour? # Make 5 a result of the money per game credit times 5 
   end
 
 
