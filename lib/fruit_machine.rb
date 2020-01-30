@@ -38,7 +38,6 @@ class FruitMachine
     return 5 if game_adjacent_colour? # Make 5 a result of the money per game credit times 5 
   end
 
-
   private
 
   def game_jackpot?
