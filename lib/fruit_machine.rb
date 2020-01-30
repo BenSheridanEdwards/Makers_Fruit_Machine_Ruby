@@ -6,11 +6,13 @@ class FruitMachine
 
   def initialize
     @game_credits = 0
+    @money = 50
     @slots = ["Black", "White", "Green", "Yellow"]
   end
 
   def insert(money)
     @game_credits += money
+    @money += money
   end
 
   def pull_lever
@@ -22,6 +24,10 @@ class FruitMachine
 
   def player_wins? 
     true if game_jackpot?
+  end
+
+  def payout
+    return @money if game_jackpot?
   end
 
   private
