@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/BenSheridanEdwards/Makers_Fruit_Machine_Ruby.svg?branch=master)](https://travis-ci.org/BenSheridanEdwards/Makers_Fruit_Machine_Ruby)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e87b89d66ff6cf7df932/maintainability)](https://codeclimate.com/github/BenSheridanEdwards/Makers_Fruit_Machine_Ruby/maintainability)
 
 ### [Makers Academy](http://www.makersacademy.com) - Week 10 Solo Tech Test Practice
 Fruit Machine
