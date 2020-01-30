@@ -46,7 +46,15 @@ describe FruitMachine do
       expect(Slots).to receive(:random).and_return(["Black", "Black", "Black", "Black"])
       machine.pull_lever
       expect(machine.player_wins?).to be true
-      expect(machine.payout).to be 51
+      expect(machine.payout).to be 50
+    end
+
+    it 'pays out a half jackpot when the display is four different colours' do
+      machine.insert(1)
+      expect(Slots).to receive(:random).and_return(["Black", "Green", "Yellow", "White"])
+      machine.pull_lever
+      expect(machine.player_wins?).to be true
+      expect(machine.payout).to be 25
     end
   end
 end
