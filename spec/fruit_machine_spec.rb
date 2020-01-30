@@ -61,7 +61,7 @@ describe FruitMachine do
       expect(Slots).to receive(:random).and_return(["Black", "Green", "Yellow", "White"])
       machine.pull_lever
       expect(machine.player_wins?).to be true
-      expect(machine.payout).to eq (FruitMachine::FLOAT / 2) + FruitMachine::SINGLE_PLAY_FEE
+      expect(machine.payout).to eq(FruitMachine::FLOAT / 2) + FruitMachine::SINGLE_PLAY_FEE
     end
 
     it 'pays out 5 when the display contains two of the same colours adjacent to each other' do
