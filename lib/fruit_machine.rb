@@ -21,9 +21,7 @@ class FruitMachine
   end
 
   def player_wins? 
-    if game_jackpot?
-      true
-    end
+    true if game_jackpot?
   end
 
   private
