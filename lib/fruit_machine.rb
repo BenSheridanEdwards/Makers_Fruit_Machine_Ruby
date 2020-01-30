@@ -28,15 +28,18 @@ class FruitMachine
       true
     elsif game_half_jackpot?
       true
+    elsif game_adjacent_colour?
+      true
     end
   end
 
   def payout
     return @money if game_jackpot?
     return @money / 2 if game_half_jackpot?
+
   end
 
-  private
+
 
   def game_jackpot?
     @outcome.uniq.size == 1
@@ -44,5 +47,9 @@ class FruitMachine
 
   def game_half_jackpot?
     @outcome.uniq.size == 4
+  end
+
+  def game_adjacent_colour?
+    @outcome.each_with_index { |element, index| return true if element == @outcome[index + 1] }
   end
 end
