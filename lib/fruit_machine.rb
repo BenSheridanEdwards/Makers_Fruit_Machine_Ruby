@@ -2,6 +2,8 @@ require_relative 'slots'
 
 class FruitMachine
 
+  SINGLE_PLAY_FEE = 1
+
   attr_reader :game_credits, :outcome
 
   def initialize
@@ -16,7 +18,7 @@ class FruitMachine
   end
 
   def pull_lever
-    @game_credits -= 1
+    @game_credits -= SINGLE_PLAY_FEE
     @outcome = Slots.random
     @display = @outcome.map { |colour| "#{colour}" }.join(" | ")
     return @display
@@ -35,7 +37,7 @@ class FruitMachine
   def payout
     return @money if game_jackpot?
     return @money / 2 if game_half_jackpot?
-    return 5 if game_adjacent_colour? # Make 5 a result of the money per game credit times 5 
+    return SINGLE_PLAY_FEE * 5 if game_adjacent_colour?
   end
 
   private

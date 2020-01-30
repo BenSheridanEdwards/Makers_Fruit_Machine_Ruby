@@ -20,7 +20,7 @@ describe FruitMachine do
       machine.insert(1)
       expect(machine.game_credits).to eq 1
       machine.pull_lever
-      expect(machine.game_credits).to eq 0
+      expect(machine.game_credits).to eq(1 - FruitMachine::SINGLE_PLAY_FEE)
     end
   end
 
