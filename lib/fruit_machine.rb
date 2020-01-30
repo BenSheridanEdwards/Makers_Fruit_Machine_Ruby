@@ -17,7 +17,6 @@ class FruitMachine
 
   def pull_lever
     @game_credits -= 1
-    @money -= 1
     @outcome = Slots.random
     @display = @outcome.map { |colour| "#{colour}" }.join(" | ")
     return @display
@@ -38,6 +37,9 @@ class FruitMachine
     return @money / 2 if game_half_jackpot?
     return 5 if game_adjacent_colour? # Make 5 a result of the money per game credit times 5 
   end
+
+
+  private
 
   def game_jackpot?
     @outcome.uniq.size == 1
