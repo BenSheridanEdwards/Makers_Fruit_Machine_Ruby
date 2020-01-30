@@ -80,19 +80,21 @@ I'd expect to win a prize, and receive 5 times the cost of a single play.
 
 ### Class Diagram
 
-|   Fruit Machine   |     Player     |      Prize      | 
-| ----------------- | ---------------| --------------- |
-|  @plays_remaining |     @money     |     @money      |
-|      @slots       |                |                 |
-|                   |                |                 |
-|      #play        | #insert(money) | #payout(jackpot)|
-|#display_random_colours | |
+|   Fruit Machine   |     Player     |
+| ----------------- | ---------------|
+| @money            | @money |
+| game_credits      |        |
+| | |
+| #insert(money) | #play(fruit_machine, money)  |
+| #pull_lever    |         |
+| #win?          |         |
+| #payout        |         |
 
-Responsiblities
 
-Fruit Machine = Keep track of remaining games, convert inserted money into games, display the slots.
-Player = Keep track of money, and insert money into the fruit machine.
-Prize = Keeps track of the machine's money, and award payouts to the player when they win. 
+### Responsiblities
+
+Fruit Machine = Covert money into game credits, keep track of remaining credits, keep track of the machines money, display the slots, payout prizes if the player wins.
+Player = Keep track of money, and play the fruit machine.
 
 ## <a name="Installation">Installation Instructions</a>
 
