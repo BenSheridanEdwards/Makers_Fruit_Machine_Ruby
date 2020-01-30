@@ -80,15 +80,19 @@ I'd expect to win a prize, and receive 5 times the cost of a single play.
 
 ### Class Diagram
 
-|   Fruit Machine   |     Player     |
-| ----------------- | ---------------|
-| @money            | @money |
-| game_credits      |        |
+|   Fruit Machine   |     Player     |    Slots   |
+| ----------------- | ---------------|------------|
+| @money            | @money | SLOTS
+| @game_credits      |        |
 | | |
-| #insert(money) | #play(fruit_machine, money)  |
+| #insert(money) | #play(fruit_machine, money)  | #random |
 | #pull_lever    |         |
-| #win?          |         |
+| #player_wins?  |         |
+| #game_jackpot? |         | 
+| #game_half_jackpot? | |
+| #game_adjacent_colours? | |
 | #payout        |         |
+|||
 
 
 ### Responsiblities
