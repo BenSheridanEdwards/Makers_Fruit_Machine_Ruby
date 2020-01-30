@@ -10,4 +10,9 @@ class FruitMachine
     @game_credits += money
   end
 
+  def pull_lever
+    @game_credits -= 1
+    "| Black | White | Green | Yellow |"
+  end
+
 end
