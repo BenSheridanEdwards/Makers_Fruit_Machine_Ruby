@@ -43,7 +43,6 @@ describe FruitMachine do
       machine.insert(1)
       expect(Slots).to receive(:random).and_return(["Black", "White", "White", "Yellow"])
       machine.pull_lever
-      p machine.game_adjacent_colour?
       expect(machine.player_wins?).to be true
     end
   end
