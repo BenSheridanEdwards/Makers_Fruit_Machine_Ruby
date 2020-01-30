@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BenSheridanEdwards/Makers_Fruit_Machine_Ruby.svg?branch=master)](https://travis-ci.org/BenSheridanEdwards/Makers_Fruit_Machine_Ruby)
+
 ### [Makers Academy](http://www.makersacademy.com) - Week 10 Solo Tech Test Practice
 Fruit Machine
 -
