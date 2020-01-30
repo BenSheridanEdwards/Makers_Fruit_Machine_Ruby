@@ -1,6 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
 require_relative './../lib/fruit_machine.rb'
+require_relative './../lib/slots.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
