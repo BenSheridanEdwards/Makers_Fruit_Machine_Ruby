@@ -10,9 +10,10 @@ describe FruitMachine do
   end
 
   describe '#pull_lever' do
-    it 'begins a play and returns four colours to the player' do
+    it 'begins a play and returns four random colours to the player' do
       machine.insert(10)
-      expect(machine.pull_lever).to eq "| Black | White | Green | Yellow |"
+      expect(machine).to receive(:pull_lever).and_return("Black | White | Green | Yellow")
+      expect(machine.pull_lever).to eq "Black | White | Green | Yellow"
     end
 
     it 'reduces the number of game credits by one' do
