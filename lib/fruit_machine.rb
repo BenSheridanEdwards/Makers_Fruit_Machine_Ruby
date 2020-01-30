@@ -1,6 +1,8 @@
+require_relative 'slots'
+
 class FruitMachine
 
-  attr_reader :game_credits
+  attr_reader :game_credits, :outcome
 
   def initialize
     @game_credits = 0
@@ -13,9 +15,20 @@ class FruitMachine
 
   def pull_lever
     @game_credits -= 1
-    outcome = @slots.sample(4)
-    display = outcome.map { |colour| "#{colour}"}
-    return display.join(" | ")
+    @outcome = Slots.random
+    @display = @outcome.map { |colour| "#{colour}" }.join(" | ")
+    return @display
   end
 
+  def player_wins? 
+    if game_jackpot?
+      true
+    end
+  end
+
+  private
+
+  def game_jackpot?
+    @outcome.uniq.size == 1
+  end
 end

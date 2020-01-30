@@ -23,4 +23,12 @@ describe FruitMachine do
       expect(machine.game_credits).to eq 9
     end
   end
+
+  describe '#player_wins?' do
+    it 'returns true if a four of the same colour is displayed' do
+      expect(Slots).to receive(:random).and_return(["Black", "Black", "Black", "Black"])
+      machine.pull_lever
+      expect(machine.player_wins?).to be true
+    end
+  end
 end
