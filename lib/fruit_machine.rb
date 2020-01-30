@@ -3,17 +3,18 @@ require_relative 'slots'
 class FruitMachine
 
   SINGLE_PLAY_FEE = 1
+  FLOAT = 50
 
   attr_reader :game_credits, :outcome
 
   def initialize
     @game_credits = 0
-    @money = 50
+    @money = FLOAT
     @slots = ["Black", "White", "Green", "Yellow"]
   end
 
   def insert(money)
-    @game_credits += money
+    @game_credits += money / SINGLE_PLAY_FEE
     @money += money
   end
 
