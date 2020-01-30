@@ -65,6 +65,32 @@ I'd expect to win a prize, and receive 5 times the cost of a single play.
 
 ## <a name="Modelling">Modelling</a>
 
+### Domain Model
+
+| Nouns | Verbs |
+| --- | --- |
+| fruit machine | play/spin | 
+| colour | payout | 
+| slots | insert money |
+| jackpot |
+| prize | 
+| money | 
+
+### Class Diagram
+
+|   Fruit Machine   |     Player     |      Prize      | 
+| ----------------- | ---------------| --------------- |
+|  @plays_remaining |     @money     |     @money      |
+|      @slots       |                |                 |
+|                   |                |                 |
+|      #play        | #insert(money) | #payout(jackpot)|
+|#display_random_colours | |
+
+Responsiblities
+
+Fruit Machine = Keep track of remaining games, convert inserted money into games, display the slots.
+Player = Keep track of money, and insert money into the fruit machine.
+Prize = Keeps track of the machine's money, and award payouts to the player when they win. 
 
 ## <a name="Installation">Installation Instructions</a>
 
