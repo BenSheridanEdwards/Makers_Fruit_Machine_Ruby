@@ -19,7 +19,7 @@ class FruitMachine
   end
 
   def pull_lever
-    @game_credits -= SINGLE_PLAY_FEE
+    @game_credits -= 1
     @outcome = Slots.random
     @display = @outcome.map { |colour| "#{colour}" }.join(" | ")
     return @display
